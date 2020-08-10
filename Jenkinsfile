@@ -93,7 +93,7 @@ pipeline {
 	}
         /**
          * This stage simulates an SRE manual approval process. Should you want to incorporate
-         * this into your pipeline you can uncomment this stage. */
+         * this into your pipeline you can uncomment this stage. 
         stage('Wait for SRE Approval') {
             steps{
                 timeout(time:12, unit:'HOURS') {
@@ -101,6 +101,7 @@ pipeline {
                 }
             }
         }
+	*/
          
 	
     }
