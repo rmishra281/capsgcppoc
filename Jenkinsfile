@@ -87,7 +87,7 @@ pipeline {
 	    steps{
 		container('gke-deploy') {
 		    sh "sed -i s#IMAGE#${GCR_IMAGE}#g kubernetes/manifest.yaml"
-                    step([$class: 'KubernetesEngineBuilder', projectId: "capsgcppoc", clusterName: env.STAGING_CLUSTER, location: env.PROJECT_ZONE, manifestPattern: 'kubernetes/manifest.yaml', credentialsId: "kaniko-role2", verifyDeployments: true])
+                    step([$class: 'KubernetesEngineBuilder', projectId: "capsgcppoc", clusterName: env.STAGING_CLUSTER, location: env.PROJECT_ZONE, manifestPattern: 'kubernetes/manifest.yaml', credentialsId: "jenkins-sa", verifyDeployments: true])
 		}
             }
 	}
