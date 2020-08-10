@@ -39,7 +39,7 @@ pipeline {
 	    }
 	    steps {
 	    	container('maven') {
-                    dir("gke") {
+                     {
 		        // build
 	    	        sh "mvn clean package"
 
