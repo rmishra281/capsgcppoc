@@ -23,7 +23,7 @@ pipeline {
         PROD_CLUSTER = "${JENK_INT_IT_PROD}"
         BUILD_CONTEXT_BUCKET = "${JENK_INT_IT_BUCKET}"
         BUILD_CONTEXT = "build-context-${BUILD_ID}.tar.gz"
-        APP_NAME = "jenkins-integration-samples-gke"
+        APP_NAME = "capsgcppoc"
         GCR_IMAGE = "gcr.io/${PROJECT_ID}/${APP_NAME}:${BUILD_ID}"
         APP_JAR = "${APP_NAME}.jar"
     }
