@@ -24,7 +24,7 @@ pipeline {
         BUILD_CONTEXT_BUCKET = "${JENK_INT_IT_BUCKET}"
         BUILD_CONTEXT = "build-context-${BUILD_ID}.tar.gz"
         APP_NAME = "capsgcppoc"
-        GCR_IMAGE = "gcr.io/${PROJECT_ID}/${APP_NAME}:${BUILD_ID}"
+        GCR_IMAGE = "gcr.io/capsgcppoc/capsgcppoc:${BUILD_ID}"
         APP_JAR = "${APP_NAME}.jar"
     }
 
