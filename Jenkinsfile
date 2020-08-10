@@ -72,7 +72,7 @@ pipeline {
 	        container(name: 'kaniko', shell: '/busybox/sh') {
 		    sh "echo  hello "
 		    sh '''#!/busybox/sh
-		    /kaniko/executor -f 'pwd' Dockerfile -c 'pwd' --context="gs://${BUILD_CONTEXT_BUCKET}/${BUILD_CONTEXT}" --destination="${GCR_IMAGE}" --build-arg JAR_FILE="${APP_JAR}"
+		    /kaniko/executor -f `pwd` Dockerfile -c 'pwd' --context="gs://${BUILD_CONTEXT_BUCKET}/${BUILD_CONTEXT}" --destination="${GCR_IMAGE}" --build-arg JAR_FILE="${APP_JAR}"
 		    '''
 		}
 	    }
