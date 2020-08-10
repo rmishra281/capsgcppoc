@@ -93,7 +93,7 @@ pipeline {
 	}
         /**
          * This stage simulates an SRE manual approval process. Should you want to incorporate
-         * this into your pipeline you can uncomment this stage.
+         * this into your pipeline you can uncomment this stage. */
         stage('Wait for SRE Approval') {
             steps{
                 timeout(time:12, unit:'HOURS') {
@@ -101,21 +101,7 @@ pipeline {
                 }
             }
         }
-         **/
-	stage("Deploy to prod") {
-            agent {
-    	        kubernetes {
-      		    cloud 'kubernetes'
-      		    label 'gke-deploy'
-		    yamlFile 'jenkins/gke-deploy-pod.yaml'
-		}
-            }
-	    steps{
-		container('gke-deploy') {
-		    sh "sed -i s#IMAGE#${GCR_IMAGE}#g kubernetes/manifest.yaml"
-                    step([$class: 'KubernetesEngineBuilder', projectId: env.PROJECT_ID, clusterName: env.PROD_CLUSTER, location: env.PROJECT_ZONE, manifestPattern: 'kubernetes/manifest.yaml', credentialsId: env.JENK_INT_IT_CRED_ID, verifyDeployments: true])
-		}
-            }
-	}
+         
+	
     }
 }
