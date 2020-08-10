@@ -34,7 +34,7 @@ pipeline {
     	    	kubernetes {
       		    cloud 'kubernetes'
       		    label 'maven-pod'
-      		    yamlFile 'gke/jenkins/maven-pod.yaml'
+      		    yamlFile 'jenkins/maven-pod.yaml'
 		}
 	    }
 	    steps {
@@ -62,7 +62,7 @@ pipeline {
     	    	kubernetes {
       		    cloud 'kubernetes'
       		    label 'kaniko-pod'
-      		    yamlFile 'gke/jenkins/kaniko-pod.yaml'
+      		    yamlFile 'jenkins/kaniko-pod.yaml'
 		}
 	    }
 	    environment {
@@ -81,7 +81,7 @@ pipeline {
     	        kubernetes {
       		    cloud 'kubernetes'
       		    label 'gke-deploy'
-		    yamlFile 'gke/jenkins/gke-deploy-pod.yaml'
+		    yamlFile 'jenkins/gke-deploy-pod.yaml'
 		}
             }
 	    steps{
@@ -107,7 +107,7 @@ pipeline {
     	        kubernetes {
       		    cloud 'kubernetes'
       		    label 'gke-deploy'
-		    yamlFile 'gke/jenkins/gke-deploy-pod.yaml'
+		    yamlFile 'jenkins/gke-deploy-pod.yaml'
 		}
             }
 	    steps{
