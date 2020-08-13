@@ -25,7 +25,7 @@ spec:
         mountPath: /tmp
     env:
       - name: GOOGLE_APPLICATION_CREDENTIALS
-        value: /tmp/kaniko-secret.json
+        value: /tmp/capspocgcp-secret.json
   volumes:
   - name: capsgcppoc
     secret:
