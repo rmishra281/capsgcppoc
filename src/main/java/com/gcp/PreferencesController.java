@@ -23,18 +23,18 @@ public class PreferencesController {
 	private static final Logger LOGGER = LogManager.getLogger(PreferencesController.class);
 
 	@GetMapping(value = "/pref/{specId}")
-	public Optional<PreferenceSpec> getPrefences(@PathVariable("userid") Long specId) {
+	public Optional<PreferenceSpec> getPrefences(@PathVariable("specId") Long specId) {
 		LOGGER.info("<html><h1>CAPS Depoyed on GCP user:</html> " + specId + "</h1>");
 		return repository.findById(specId);
 	}
 	
 	@PostMapping(value="/pref")
-	public void savePreference(@RequestBody PreferenceSpecRequest request) {
+	public PreferenceSpec savePreference(@RequestBody PreferenceSpecRequest request) {
 		PreferenceSpec entity = new PreferenceSpec();
-		entity.setKey(request.getKey());
-		entity.setValue(request.getValue());
-		entity.setDesc(request.getDesc());
-		repository.save(entity);
+		entity.setPrefkey(request.getKey());
+		entity.setPrefvalue(request.getValue());
+		entity.setDescdetails(request.getDesc());
+		return repository.save(entity);
 	}
 
 }

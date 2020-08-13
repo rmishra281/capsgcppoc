@@ -20,16 +20,13 @@ spec:
     image: gcr.io/jenkins-gke-plugin/jenkinsagent
     command: ['cat']
     tty: true
-    command:
-    - /busybox/cat
-    tty: true
     volumeMounts:
-      - name: kaniko-secret
+      - name: capsgcppoc
         mountPath: /tmp
     env:
       - name: GOOGLE_APPLICATION_CREDENTIALS
         value: /tmp/kaniko-secret.json
   volumes:
-  - name: kaniko-secret
+  - name: capsgcppoc
     secret:
       secretName: capsgcppoc

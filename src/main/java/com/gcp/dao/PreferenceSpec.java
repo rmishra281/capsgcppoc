@@ -11,31 +11,32 @@ public class PreferenceSpec {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long specId;
 	
-	private String key ;
-	private String value;
-	private String desc;
+	private String prefkey ;
+	private String prefvalue;
+	private String descdetails;
 	public Long getSpecId() {
 		return specId;
 	}
 	public void setSpecId(Long specId) {
 		this.specId = specId;
 	}
-	public String getKey() {
-		return key;
+	public String getPrefkey() {
+		return prefkey;
 	}
-	public void setKey(String key) {
-		this.key = key;
+	public void setPrefkey(String prefkey) {
+		this.prefkey = prefkey;
 	}
-	public String getValue() {
-		return value;
+	public String getPrefvalue() {
+		return prefvalue;
 	}
-	public void setValue(String value) {
-		this.value = value;
+	public void setPrefvalue(String prefvalue) {
+		this.prefvalue = prefvalue;
 	}
-	public String getDesc() {
-		return desc;
+	public String getDescdetails() {
+		return descdetails;
 	}
-	public void setDesc(String desc) {
-		this.desc = desc;
+	public void setDescdetails(String descdetails) {
+		this.descdetails = descdetails;
 	}
+	
 }
