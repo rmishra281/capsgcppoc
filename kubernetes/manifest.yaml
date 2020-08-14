@@ -20,15 +20,12 @@ spec:
           volumeMounts:
             - name: kaniko-secret
               mountPath: /tmp
-            - name: kaniko-secret1
-              mountPath: /home
           env:
             - name: GOOGLE_APPLICATION_CREDENTIALS
               value: /tmp/kaniko-secret.json
       volumes:
-        - name: kaniko-secret1
-          emptyDir: {}
         - name: kaniko-secret
-          configMap:
-             name: bla
+          secret:
+              secretName: capsgcppoc
+              defaultMode: 0666
       
