@@ -23,12 +23,12 @@ spec:
           env:
             - name: GOOGLE_APPLICATION_CREDENTIALS
               value: /tmp/kaniko-secret.json
+      volumes:
+        - name: kaniko-secret
+          secret:
+            secretName: capsgcppoc
+          emptyDir: {}
       securityContext:
           runAsUser: 1000
           runAsGroup: 3000
           fsGroup: 2000
-      volumes:
-        - name: kaniko-secret
-          emptyDir: {}
-          secret:
-            secretName: capsgcppoc
