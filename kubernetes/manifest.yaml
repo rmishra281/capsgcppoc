@@ -25,8 +25,7 @@ spec:
               value: /tmp/kaniko-secret.json
       volumes:
         - name: kaniko-secret
-          secret:
-            secretName: capsgcppoc
+          emptyDir: {}
           persistentVolumeClaim:
-            claimName: pv-claim-demo
+            claimName: logs-nfs
            
