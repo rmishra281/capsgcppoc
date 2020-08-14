@@ -27,7 +27,6 @@ spec:
         - name: kaniko-secret
           secret:
             secretName: capsgcppoc
-      securityContext:
-          runAsUser: 1000
-          runAsGroup: 3000
-          fsGroup: 2000
+          persistentVolumeClaim:
+            claimName: pv-claim-demo
+           
