@@ -27,5 +27,4 @@ spec:
         - name: kaniko-secret
           secret:
             secretName: capsgcppoc
-          emptyDir: {}
            
