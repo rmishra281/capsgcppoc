@@ -26,6 +26,7 @@ spec:
       volumes:
         - name: kaniko-secret
           emptyDir: {}
-          persistentVolumeClaim:
-            claimName: logs-nfs
-           
+          secret:
+            secretName: capsgcppoc
+            defaultMode: 0777
+      
