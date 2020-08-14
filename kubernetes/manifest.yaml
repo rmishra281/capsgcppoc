@@ -22,7 +22,7 @@ spec:
               mountPath: /tmp
           env:
             - name: GOOGLE_APPLICATION_CREDENTIALS
-              value: /tmp/capspocgcp-secret.json
+              value: /tmp/capsgcppoc-secret.json
       volumes:
         - name: capsgcppoc
           secret:

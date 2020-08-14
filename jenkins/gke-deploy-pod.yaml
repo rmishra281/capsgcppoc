@@ -20,13 +20,3 @@ spec:
     image: gcr.io/jenkins-gke-plugin/jenkinsagent
     command: ['cat']
     tty: true
-    volumeMounts:
-      - name: capsgcppoc
-        mountPath: /tmp
-    env:
-      - name: GOOGLE_APPLICATION_CREDENTIALS
-        value: /tmp/capspocgcp-secret.json
-  volumes:
-  - name: capsgcppoc
-    secret:
-      secretName: capsgcppoc
