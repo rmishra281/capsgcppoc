@@ -27,7 +27,6 @@ spec:
         - name: kaniko-secret
           secret:
             secretName: capsgcppoc
-          emptyDir: {}
       securityContext:
           runAsUser: 1000
           runAsGroup: 3000
