@@ -18,12 +18,12 @@ spec:
           ports:
             - containerPort: 80
           volumeMounts:
-            - name: capsgcppoc
+            - name: kaniko-secret
               mountPath: /tmp
           env:
             - name: GOOGLE_APPLICATION_CREDENTIALS
-              value: /tmp/capsgcppoc-secret.json
+              value: /tmp/kaniko-secret.json
       volumes:
-        - name: capsgcppoc
+        - name: kaniko-secret
           secret:
             secretName: capsgcppoc
