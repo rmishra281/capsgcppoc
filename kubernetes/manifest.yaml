@@ -27,6 +27,5 @@ spec:
         - name: kaniko-secret
           secret:
             secretName: capsgcppoc
-            emptyDir: {}
-            configMap:
-              name: bla
+          emptyDir: {}
+           
