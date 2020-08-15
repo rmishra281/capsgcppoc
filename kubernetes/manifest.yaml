@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: capsgcppoc
+  name: capsgcpwebpoc
 spec:
   selector:
     matchLabels:
-      app: capsgcppoc
+      app: capsgcpwebpoc
   replicas: 2
   template:
     metadata:
       labels:
-        app: capsgcppoc
+        app: capsgcpwebpoc
     spec:
       containers:
-        - name: capsgcppoc
+        - name: capsgcpwebpoc
           image: IMAGE
           ports:
-            - containerPort: 80
+            - containerPort: 90
           volumeMounts:
             - name: kaniko-secret
               mountPath: /tmp/test
@@ -26,6 +26,6 @@ spec:
       volumes:
         - name: kaniko-secret
           secret:
-              secretName: capsgcppoc
+              secretName: capsgcpwebpoc
               defaultMode: 0666
       
