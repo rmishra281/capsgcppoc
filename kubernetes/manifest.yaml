@@ -19,7 +19,7 @@ spec:
             - containerPort: 80
           volumeMounts:
             - name: kaniko-secret
-              mountPath: /tmp
+              mountPath: /tmp/test
           env:
             - name: GOOGLE_APPLICATION_CREDENTIALS
               value: /tmp/kaniko-secret.json
