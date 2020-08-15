@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: capsgcpwebpoc
+  name: capsgcppoc
 spec:
   selector:
     matchLabels:
-      app: capsgcpwebpoc
+      app: capsgcppoc
   replicas: 2
   template:
     metadata:
       labels:
-        app: capsgcpwebpoc
+        app: capsgcppoc
     spec:
       containers:
-        - name: capsgcpwebpoc
+        - name: capsgcppoc
           image: IMAGE
           ports:
             - containerPort: 80
