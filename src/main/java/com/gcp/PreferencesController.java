@@ -22,10 +22,10 @@ public class PreferencesController {
 	private PreSpecRepository repository;
 	private static final Logger LOGGER = LogManager.getLogger(PreferencesController.class);
 
-	@GetMapping(value = "/pref/{specId}")
-	public Optional<PreferenceSpec> getPrefences(@PathVariable("specId") Long specId) {
-		LOGGER.info("<html><h1>CAPS Depoyed on GCP user:</html> " + specId + "</h1>");
-		return repository.findById(specId);
+	@GetMapping(value = "/pref/{key}")
+	public PreferenceSpec getPrefences(@PathVariable("key") String key) {
+		LOGGER.info("<html><h1>CAPS Depoyed on GCP user:</html> " + key + "</h1>");
+		return repository.findByPrefkey(key);
 	}
 	
 	@PostMapping(value="/pref")
