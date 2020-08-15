@@ -16,7 +16,7 @@ spec:
         - name: capsgcpwebpoc
           image: IMAGE
           ports:
-            - containerPort: 90
+            - containerPort: 80
           volumeMounts:
             - name: kaniko-secret
               mountPath: /tmp/test
