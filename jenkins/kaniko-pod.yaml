@@ -29,7 +29,7 @@ spec:
         mountPath: /tmp
     env:
       - name: GOOGLE_APPLICATION_CREDENTIALS
-        value: /tmp/test/kaniko-secret.json
+        value: /tmp/kaniko-secret.json
   volumes:
   - name: kaniko-secret
     secret:
