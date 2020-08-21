@@ -22,7 +22,7 @@ public class PreferencesController {
 
 	@GetMapping(value = "/pref/{key}")
 	public PreferenceSpec getPrefences(@PathVariable("key") String key) {
-		LOGGER.info("<html><h1>CAPS Depoyed on GCP user:</html> " + key + "</h1>");
+		LOGGER.info("CAPS getPrefences api " + key );
 		return repository.findByPrefkey(key);
 	}
 	
